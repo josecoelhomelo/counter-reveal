@@ -1,7 +1,8 @@
 new Counter('#example1');
 new Counter('#example2');
 new Counter('#example3', {
-    target: 100,
+    target: 10000,
     type: 'both',
-    suffix: '%'   
+    suffix: '%',    
+    format: (value) => value.toLocaleString()
 });

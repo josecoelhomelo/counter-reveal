@@ -31,8 +31,8 @@ class Counter {
         const visibleTop = element.offsetTop - window.innerHeight;
         const visibleBottom = element.offsetTop + element.clientHeight;
         if (
-            window.pageYOffset < visibleTop ||
-            window.pageYOffset > visibleBottom ||
+            window.scrollY < visibleTop ||
+            window.scrollY > visibleBottom ||
             element.hasAttribute('data-counter-complete')
         ) { return; }
         
@@ -56,13 +56,16 @@ class Counter {
         if (child) {
             element = element.querySelector(`.${options.classes.number}`);
         }
-
         const origin = +element.innerText || options.origin;
         let start;
         const step = (timestamp) => {
             start = start || timestamp;
-            const progress = Math.min((timestamp - start) / options.duration, 1);        
-            element.innerHTML = Math.floor(progress * (options.target - origin) + origin) + options.suffix;
+            const progress = Math.min((timestamp - start) / options.duration, 1); 
+            let value = Math.floor(progress * (options.target - origin) + origin);
+            if (typeof options.format === 'function') {
+                value = options.format(value);
+            }
+            element.innerHTML = value + options.suffix;       
             if (progress < 1) {
                 window.requestAnimationFrame(step);
             } else {
@@ -75,7 +78,6 @@ class Counter {
         if (child) {
             element = element.querySelector(`.${this.options.classes.bar}`);
         }
-
         element.animate([
             { width: `${options.origin * 100 / options.target}%` },
             { width: '100%' }

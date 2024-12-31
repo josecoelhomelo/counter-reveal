@@ -1,12 +1,12 @@
-Vanilla JavaScript plugin to increase an element or number, with animation, when it becomes visible in the viewport.
+JavaScript plugin to increase an element or number, with animation, when it becomes visible in the viewport.
 
-Demo: https://josecoelhomelo.github.io/counter/demo/
+Demo: [josecoelhomelo.github.io/counter-reveal/demo](https://josecoelhomelo.github.io/counter-reveal/demo)
 
 # Installation
 
-Download `counter.js` or the minified version `counter.min.js` and include it:
+Download `counter-reveal.js` or the minified version `counter-reveal.min.js` and include it:
 ```html
-<script src="counter.min.js">
+<script src="counter-reveal.min.js">
 ```
 
 # Usage
