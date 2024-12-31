@@ -40,8 +40,8 @@ You can set options when creating a new instance or directly in HTML:
 ```js
 new Counter('.counter', {
     origin: 20,
-    target: 100,
-    suffix: '%',    
+    target: 25000,
+    suffix: '€',    
     format: (value) => value.toLocaleString()
 });
 ```
