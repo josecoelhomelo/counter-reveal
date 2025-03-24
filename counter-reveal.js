@@ -1,7 +1,7 @@
 class Counter {
     constructor(element, options) {
         this.element = element;
-        this.options = { ...{
+        this.options = {
             origin: 0,
             target: 100,
             type: 'numeric', // 'numeric', 'bar', 'both'
@@ -10,8 +10,9 @@ class Counter {
             classes: {
                 bar: 'counter-bar',
                 number: 'counter-number'
-            }
-        }, ...options }
+            },
+            ...options
+        }
         this.init();
     }
     init() {
