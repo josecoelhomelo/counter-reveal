@@ -2,14 +2,15 @@ JavaScript plugin to increase an element or number, with animation, when it beco
 
 Demo: [josecoelhomelo.github.io/counter-reveal/demo](https://josecoelhomelo.github.io/counter-reveal/demo)
 
-# Installation
+## Installation
 
 Download `counter-reveal.js` or the minified version `counter-reveal.min.js` and include it:
+
 ```html
 <script src="counter-reveal.min.js">
 ```
 
-# Usage
+## Usage
 
 Create a new instance targetting an element, for example:
 
@@ -20,9 +21,10 @@ Create a new instance targetting an element, for example:
 </script>
 ```
 
-# Options
+## Options
 
 Default options:
+
 ```js
 origin: 0,
 target: 100,
@@ -45,6 +47,7 @@ new Counter('.counter', {
     format: (value) => value.toLocaleString()
 });
 ```
+
 ```html
 <div class="counter"
     data-counter-origin="20"
